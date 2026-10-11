@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="page-head">
+  <div class="wrap prose-width">
+    {% for track in site.data.tracks %}{% if page.categories contains track.slug %}
+    <a class="track-chip" href="{{ '/tutorials/' | relative_url }}#{{ track.slug }}">{{ track.title }}</a>
+    {% endif %}{% endfor %}
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>
+  </div>
+</section>
+<article class="wrap prose prose-width">
+  {{ content }}
+</article>
+<nav class="wrap prose-width post-nav" aria-label="Posts">
+  {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+  {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% endif %}
+</nav>

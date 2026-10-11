@@ -1,0 +1,91 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="wrap hero-row">
+    <div class="hero-text">
+      <p class="eyebrow">Tutorials and projects</p>
+      <h1>Embedded systems, from the signal to the control loop.</h1>
+      <p class="hero-lead">
+        Practical notes on embedded Linux, signal processing, control design, edge AI, and FPGAs.
+        Every tutorial shows the commands, the errors, and the fix.
+      </p>
+      <p class="hero-actions">
+        <a class="button button-primary" href="{{ '/tutorials/' | relative_url }}">Browse tutorials</a>
+        <a class="button button-ghost" href="{{ '/projects/' | relative_url }}">See projects</a>
+      </p>
+    </div>
+    <div class="hero-terminal" aria-hidden="true">
+      <div class="terminal-bar"><i></i><i></i><i></i></div>
+      <pre><span class="prompt">$</span> ls ~/tracks
+{% for track in site.data.tracks %}{{ track.slug }}/
+{% endfor %}
+<span class="prompt">$</span> cat ~/now
+Learning embedded Linux
+on a BeagleBone Green.<span class="cursor"></span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Tutorial tracks</h2>
+      <p>Pick a topic and follow it from the first step.</p>
+    </div>
+    <div class="track-grid">
+      {% for track in site.data.tracks %}
+      {% assign count = 0 %}
+      {% for post in site.posts %}{% if post.categories contains track.slug %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+      <a class="track-card" href="{{ '/tutorials/' | relative_url }}#{{ track.slug }}">
+        <span class="track-code">{{ track.code }}</span>
+        <h3>{{ track.title }}</h3>
+        <p>{{ track.description }}</p>
+        <span class="track-count">{% if count == 0 %}Coming soon{% elsif count == 1 %}1 post{% else %}{{ count }} posts{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p>What I am building right now.</p>
+    </div>
+    {% include project-cards.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Latest posts</h2>
+      <p><a href="{{ '/tutorials/' | relative_url }}">All tutorials &rarr;</a></p>
+    </div>
+    <div class="post-list">
+      {% for post in site.posts limit: 6 %}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+        <span class="post-row-title">{{ post.title }}</span>
+        <span class="post-row-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap about-teaser">
+    <div>
+      <h2>Hi, I'm Kubilay.</h2>
+      <p>
+        I'm an engineer working on embedded systems, and this site is my public notebook. I write
+        down what I build so that the next person with the same error message finds the answer faster.
+      </p>
+      <a class="card-link" href="{{ '/about/' | relative_url }}">More about me &rarr;</a>
+    </div>
+  </div>
+</section>

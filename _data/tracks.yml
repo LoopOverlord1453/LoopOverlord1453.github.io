@@ -1,0 +1,25 @@
+# Tutorial tracks. A post joins a track by listing the track's slug under `categories`.
+- slug: embedded-linux
+  code: LNX
+  title: Embedded Linux
+  description: Bootloaders, kernel builds, device trees, drivers, and build systems on a BeagleBone Green.
+
+- slug: signal-processing
+  code: DSP
+  title: Signal Processing
+  description: Filter design, spectral analysis, and sensor fusion, from the math to fixed-point C.
+
+- slug: control-systems
+  code: CTL
+  title: Control Systems
+  description: Modeling, system identification, PID, state feedback, and model predictive control.
+
+- slug: edge-ai
+  code: AI
+  title: Edge AI
+  description: Quantizing neural networks and running them on microcontroller accelerators.
+
+- slug: fpga
+  code: FPGA
+  title: FPGA and SoC Design
+  description: Hardware-software co-design on Zynq, from HLS blocks to a booting system.

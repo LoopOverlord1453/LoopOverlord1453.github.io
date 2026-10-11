@@ -1,4 +1,4 @@
-# LoopOverlord1453.github.io
+# Closed Loop Embedded
 
 Source for my personal site: notes and projects on embedded Linux, signal processing, and control systems.
 

@@ -1,0 +1,22 @@
+<div class="project-grid">
+  {% for project in site.data.projects %}
+  <article class="project-card">
+    {% if project.image %}
+    <img class="project-shot" src="{{ project.image | relative_url }}" alt="Screenshot of {{ project.title }}" loading="lazy">
+    {% else %}
+    <div class="project-shot project-shot-empty" aria-hidden="true"><span>{{ project.code }}</span></div>
+    {% endif %}
+    <div class="project-body">
+      <span class="status status-{{ project.status_kind }}">{{ project.status }}</span>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.summary }}</p>
+      <ul class="tags">
+        {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+      {% if project.link %}
+      <a class="card-link" href="{% if project.link contains '://' %}{{ project.link }}{% else %}{{ project.link | relative_url }}{% endif %}">{{ project.link_label }} &rarr;</a>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

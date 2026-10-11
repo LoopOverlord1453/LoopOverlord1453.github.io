@@ -1,0 +1,44 @@
+# Projects shown on the home page and the Projects page, in this order.
+# status_kind sets the badge colour: active, building, or planned.
+- title: Signal Processing Studio
+  code: DSP
+  status: Active
+  status_kind: active
+  image: /assets/img/signal-processing-studio.png
+  summary: >-
+    A desktop workbench for real-time signal analysis and control design. It streams live data
+    from a target board over UDP, then lets you filter it, fuse sensors, identify a model, design
+    a controller, and export the result as C code for a microcontroller.
+  tags: [Python, PyQt6, DSP, Sensor fusion, MPC, C code generation]
+  link: https://github.com/LoopOverlord1453/signal-processing-studio
+  link_label: Source on GitHub
+
+- title: Visual-Thermal-Inertial Odometry on Zynq
+  code: FPGA
+  status: Planning
+  status_kind: planned
+  summary: >-
+    Navigation for small UAVs without satellite positioning. Feature detection and tracking run
+    in FPGA fabric, a multi-camera MSCKF estimator runs on the ARM cores, and a thermal camera
+    extends operation into the night.
+  tags: [Zynq-7020, FPGA, State estimation, Computer vision]
+
+- title: Edge AI on the STM32N6
+  code: AI
+  status: Getting started
+  status_kind: building
+  summary: >-
+    Deploying quantized vision models on a microcontroller with a neural accelerator, and
+    measuring what it costs in latency, memory, and power.
+  tags: [STM32N6, Quantization, Computer vision]
+
+- title: Embedded Linux on a BeagleBone Green
+  code: LNX
+  status: Tutorial series
+  status_kind: building
+  summary: >-
+    A step-by-step series from first boot to a custom image: toolchains, device trees, kernel
+    builds, drivers, U-Boot, Buildroot, and Yocto.
+  tags: [AM335x, Kernel, Device tree, Yocto]
+  link: /tutorials/#embedded-linux
+  link_label: Follow the series
