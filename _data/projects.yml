@@ -20,10 +20,12 @@
   status: Open source
   status_kind: active
   featured: true
+  image: /assets/img/uml-design-studio.png
   summary: >-
-    A UML 2.5.1 editor for state machines and class diagrams that generates C11 and C++11 code
-    from the model.
-  tags: [Python, UML, State machines, Code generation]
+    Draw a UML 2.5.1 state machine or class diagram and generate MISRA-aware C11 or C++11 for a
+    microcontroller project. The diagram is the source, so the firmware and the design document
+    cannot drift apart. Includes a simulator and built-in version control.
+  tags: [Python, UML, State machines, MISRA, Code generation]
   link: https://github.com/LoopOverlord1453/uml-design-studio
   link_label: Source on GitHub
 
@@ -44,8 +46,9 @@
   status: Open source
   status_kind: active
   summary: >-
-    A modular, deterministic sensor library for quadcopter applications on STM32.
-  tags: [C, STM32, Sensor fusion]
+    RT-Sense: portable, dependency-free C drivers for the BMP388 barometer, BMI160 IMU, and
+    HMC5883L magnetometer, using data-ready interrupts for deterministic timing on STM32.
+  tags: [C, STM32, BMP388, BMI160, HMC5883L]
   link: https://github.com/LoopOverlord1453/quadcopter-subsystem-software-library
   link_label: Source on GitHub
 
@@ -54,8 +57,10 @@
   status: Open source
   status_kind: active
   summary: >-
-    Motor and sensor control over a UART-RS485 link on STM32, built during a 2024 summer internship.
-  tags: [C, STM32, RS-485, Motor control]
+    A DC-motor-driven mechanical arm controlled from a C# desktop interface over UART on RS-485,
+    with manual and automatic modes. Commands are stored in flash so the system resumes from its
+    last state after a power loss. Built during a 2024 summer internship.
+  tags: [C, STM32, "C#", RS-485, Motor control]
   link: https://github.com/LoopOverlord1453/arm-motion-control
   link_label: Source on GitHub
 

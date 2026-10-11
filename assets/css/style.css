@@ -495,6 +495,13 @@ h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; margin: 0 0 .5em; }
 .timeline-period { margin: 2px 0 0; font-family: var(--mono); font-size: .8rem; color: var(--muted); }
 .timeline-note { margin: 8px 0 0; font-size: .96rem; }
 
+.skills { display: grid; grid-template-columns: minmax(150px, auto) 1fr; gap: 12px 24px; margin: 0 0 8px; }
+.skills dt { font-weight: 650; font-size: .95rem; padding-top: 2px; }
+.skills dd { margin: 0; }
+.skills .tags { margin: 0; }
+.skills .tags li { font-size: .84rem; padding: 3px 11px; background: var(--surface); margin: 0; }
+@media (max-width: 560px) { .skills { grid-template-columns: 1fr; gap: 4px; } .skills dd { margin-bottom: 10px; } }
+
 /* ---------- footer ---------- */
 
 .site-footer { background: var(--navy); color: #a9bad2; font-size: .9rem; }

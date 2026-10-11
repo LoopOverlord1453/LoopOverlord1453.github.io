@@ -60,6 +60,16 @@ lead: Who writes this site, and why.
 </ul>
 {% endif %}
 
+{% if me.skills and me.skills.size > 0 %}
+<h2>Technical skills</h2>
+<dl class="skills">
+  {% for skill in me.skills %}
+  <dt>{{ skill.group }}</dt>
+  <dd><ul class="tags">{% for item in skill.list %}<li>{{ item }}</li>{% endfor %}</ul></dd>
+  {% endfor %}
+</dl>
+{% endif %}
+
 <h2>What I work on</h2>
 <table>
   <thead><tr><th>Area</th><th>Focus</th></tr></thead>
