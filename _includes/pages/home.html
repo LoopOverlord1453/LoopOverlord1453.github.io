@@ -7,6 +7,7 @@
     <div class="hero-text">
       <p class="eyebrow">{{ t.hero_eyebrow }}</p>
       <h1>{{ t.hero_title }}</h1>
+      <p class="hero-rotate"><span class="prompt">&gt;</span> <span data-rotate="{{ t.hero_rotate | join: '|' }}">{{ t.hero_rotate | first }}</span><span class="cursor"></span></p>
       <p class="hero-lead">{{ t.hero_lead }}</p>
       <p class="hero-actions">
         <a class="button button-primary" href="{{ base | append: '/projects/' | relative_url }}">{{ t.hero_cta_projects }}</a>
@@ -14,16 +15,37 @@
       </p>
     </div>
     <div class="hero-terminal" aria-hidden="true">
-      <div class="terminal-bar"><i></i><i></i><i></i></div>
-      <pre><span class="prompt">$</span> ls ~/tracks
-{% for track in site.data.tracks %}{{ track.slug }}/
-{% endfor %}
-<span class="prompt">$</span> cat ~/now
-{{ t.hero_now_1 }}
-{{ t.hero_now_2 }}<span class="cursor"></span></pre>
+      <div class="terminal-bar"><i></i><i></i><i></i><span>loopcore — boot</span></div>
+      <pre data-type><span class="tl" data-s="">[ 0.000] loopcore: power-on reset</span>
+<span class="tl" data-s="OK">[ 0.012] clock: pll locked</span>
+<span class="tl" data-s="OK">[ 0.031] sensors: imu baro mag</span>
+<span class="tl" data-s="RUN">[ 0.044] estimator: attitude filter</span>
+<span class="tl" data-s="RUN">[ 0.058] control: loop closed</span>
+<span class="tl tl-cmd" data-s="">$ whoami</span>
+<span class="tl tl-out" data-s="">{{ t.hero_whoami }}</span>
+<span class="tl tl-cmd" data-s="">$ ls projects/</span>
+{% for project in site.data.projects %}{% if project.detail %}<span class="tl tl-out" data-s="">{{ project.ref }}/</span>
+{% endif %}{% endfor %}<span class="cursor"></span></pre>
     </div>
   </div>
 </section>
+
+<div class="scope-strip" aria-hidden="true"><canvas data-scope></canvas><span>CH1 1.00 V&nbsp;&nbsp;CH2 500 mV&nbsp;&nbsp;M 2.00 ms</span></div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {% for pass in (1..2) %}{% for skill in site.data.profile.skills %}{% for item in skill.list %}<span>{{ item }}</span>{% endfor %}{% endfor %}{% endfor %}
+  </div>
+</div>
+
+<nav class="rail-strip" aria-label="{{ t.modules }}">
+  {% for project in site.data.projects %}{% if project.detail %}
+  <a class="rail-node" href="{{ base | append: '/projects/' | append: project.ref | append: '/' | relative_url }}">
+    <span class="rail-icon">{% include project-icon.html %}</span>
+    <span class="rail-label"><b>{{ project[lang].title }}</b></span>
+  </a>
+  {% endif %}{% endfor %}
+</nav>
 
 <section class="section section-alt">
   <div class="wrap">

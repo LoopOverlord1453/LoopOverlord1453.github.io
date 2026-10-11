@@ -12,8 +12,9 @@ en:
     projects in detail and the things I learn along the way.
   hero_cta_projects: See my projects
   hero_cta_about: About me
-  hero_now_1: Learning embedded Linux
-  hero_now_2: on a BeagleBone Green.
+  hero_rotate: [firmware, signal processing, control systems, embedded Linux, sensor fusion]
+  hero_whoami: Kubilay · embedded software engineer
+  modules: Project modules
   tracks_title: Tutorial tracks
   tracks_sub: Pick a topic and follow it from the first step.
   coming_soon: Coming soon
@@ -55,8 +56,9 @@ tr:
     projelerimi ayrıntılarıyla ve öğrendiklerimi paylaşıyorum.
   hero_cta_projects: Projelerimi gör
   hero_cta_about: Hakkımda
-  hero_now_1: BeagleBone Green üzerinde
-  hero_now_2: gömülü Linux öğreniyorum.
+  hero_rotate: [gömülü yazılım, sinyal işleme, kontrol sistemleri, gömülü Linux, sensör füzyonu]
+  hero_whoami: Kubilay · gömülü yazılım mühendisi
+  modules: Proje modülleri
   tracks_title: Eğitim başlıkları
   tracks_sub: Bir konu seçin ve ilk adımdan itibaren izleyin.
   coming_soon: Yakında

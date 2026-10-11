@@ -1,0 +1,21 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign base = '' %}{% if lang == 'tr' %}{% assign base = '/tr' %}{% endif %}
+{% assign detail_projects = site.data.projects | where: "detail", true %}
+<aside class="rail rail-left" aria-label="Projects">
+  <span class="rail-trace"></span>
+  {% for project in detail_projects %}{% assign side = forloop.index0 | modulo: 2 %}{% if side == 0 %}
+  <a class="rail-node" href="{{ base | append: '/projects/' | append: project.ref | append: '/' | relative_url }}">
+    <span class="rail-icon">{% include project-icon.html %}</span>
+    <span class="rail-label"><b>{{ project[lang].title }}</b><small>{{ project[lang].status }}</small></span>
+  </a>
+  {% endif %}{% endfor %}
+</aside>
+<aside class="rail rail-right" aria-label="Projects">
+  <span class="rail-trace"></span>
+  {% for project in detail_projects %}{% assign side = forloop.index0 | modulo: 2 %}{% if side == 1 %}
+  <a class="rail-node" href="{{ base | append: '/projects/' | append: project.ref | append: '/' | relative_url }}">
+    <span class="rail-icon">{% include project-icon.html %}</span>
+    <span class="rail-label"><b>{{ project[lang].title }}</b><small>{{ project[lang].status }}</small></span>
+  </a>
+  {% endif %}{% endfor %}
+</aside>

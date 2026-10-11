@@ -1,0 +1,52 @@
+{% comment %} Animated icon for the project in the `project` variable. Animations are defined in style.css. {% endcomment %}
+<svg class="picon" viewBox="0 0 120 80" aria-hidden="true">
+{% case project.ref %}
+{% when 'signal-processing-studio' %}
+  <path class="pi-dim" d="M8 40h104M8 14v52"/>
+  <path class="pi-wave" d="M8 40c8-30 16-30 24 0s16 30 24 0 16-30 24 0 16 30 24 0"/>
+  <g class="pi-bars"><rect x="18" y="56" width="5" height="10"/><rect x="34" y="50" width="5" height="16"/><rect x="50" y="58" width="5" height="8"/><rect x="66" y="46" width="5" height="20"/><rect x="82" y="54" width="5" height="12"/><rect x="98" y="60" width="5" height="6"/></g>
+{% when 'uml-design-studio' %}
+  <path class="pi-dim" d="M40 24h14M80 31v12M54 56H40"/>
+  <path class="pi-arrow" d="M50 20l5 4-5 4M76 39l4 5 4-5M44 52l-5 4 5 4"/>
+  <rect class="pi-state s1" x="10" y="14" width="30" height="20" rx="6"/>
+  <rect class="pi-state s2" x="55" y="14" width="50" height="20" rx="6"/>
+  <rect class="pi-state s3" x="55" y="46" width="50" height="20" rx="6"/>
+  <circle class="pi-fill" cx="25" cy="56" r="6"/>
+{% when 'quadcopter-flight-software' %}
+  <path class="pi-line" d="M36 20l48 40M84 20L36 60"/>
+  <rect class="pi-fill" x="50" y="31" width="20" height="18" rx="4"/>
+  <g class="pi-rotor"><circle cx="36" cy="20" r="13"/><circle cx="84" cy="20" r="13"/><circle cx="36" cy="60" r="13"/><circle cx="84" cy="60" r="13"/></g>
+{% when 'rt-sense' %}
+  <rect class="pi-line" x="45" y="25" width="30" height="30" rx="5"/>
+  <path class="pi-line" d="M52 25v-7M60 25v-7M68 25v-7M52 62v-7M60 62v-7M68 62v-7M45 32h-7M45 40h-7M45 48h-7M82 32h-7M82 40h-7M82 48h-7"/>
+  <circle class="pi-fill" cx="60" cy="40" r="5"/>
+  <g class="pi-ping"><circle cx="60" cy="40" r="18"/><circle cx="60" cy="40" r="18"/><circle cx="60" cy="40" r="18"/></g>
+{% when 'arm-motion-control' %}
+  <path class="pi-dim" d="M20 66h80"/>
+  <rect class="pi-line" x="48" y="50" width="24" height="16" rx="3"/>
+  <g class="pi-arm"><path class="pi-line" d="M60 50V18"/><circle class="pi-fill" cx="60" cy="16" r="6"/></g>
+  <circle class="pi-fill" cx="60" cy="50" r="4"/>
+  <path class="pi-wave" d="M12 30c6-8 12-8 18 0M90 30c6-8 12-8 18 0"/>
+{% when 'stm32f407-bare-metal' %}
+  <g class="pi-bits"><rect x="10" y="22" width="10" height="16" rx="2"/><rect x="24" y="22" width="10" height="16" rx="2"/><rect x="38" y="22" width="10" height="16" rx="2"/><rect x="52" y="22" width="10" height="16" rx="2"/><rect x="66" y="22" width="10" height="16" rx="2"/><rect x="80" y="22" width="10" height="16" rx="2"/><rect x="94" y="22" width="10" height="16" rx="2"/></g>
+  <text class="pi-text" x="10" y="60">0x4002_3800</text>
+  <path class="pi-dim" d="M10 44h94"/>
+{% when 'control-panel-fsm' %}
+  <rect class="pi-line" x="14" y="16" width="92" height="48" rx="6"/>
+  <text class="pi-text" x="24" y="36">&gt; SERVO</text>
+  <text class="pi-text pi-dimtext" x="24" y="54">&nbsp; STEPPER</text>
+  <rect class="pi-cursor" x="88" y="26" width="7" height="12"/>
+{% when 'vio-zynq' %}
+  <rect class="pi-line" x="20" y="16" width="80" height="48" rx="6"/>
+  <circle class="pi-line" cx="60" cy="40" r="14"/>
+  <circle class="pi-fill" cx="60" cy="40" r="5"/>
+  <path class="pi-scan" d="M24 40h72"/>
+{% when 'edge-ai-stm32n6' %}
+  <path class="pi-dim" d="M24 20l36 12M24 20l36 28M24 40l36-8M24 40l36 8M24 60l36-28M24 60l36-12M60 32l36 8M60 48l36-8"/>
+  <g class="pi-nodes"><circle cx="24" cy="20" r="5"/><circle cx="24" cy="40" r="5"/><circle cx="24" cy="60" r="5"/><circle cx="60" cy="32" r="5"/><circle cx="60" cy="48" r="5"/><circle cx="96" cy="40" r="5"/></g>
+{% else %}
+  <rect class="pi-line" x="14" y="14" width="92" height="52" rx="6"/>
+  <path class="pi-line" d="M28 32l10 8-10 8"/>
+  <rect class="pi-cursor" x="46" y="44" width="14" height="4"/>
+{% endcase %}
+</svg>

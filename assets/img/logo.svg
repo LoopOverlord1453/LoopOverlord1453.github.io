@@ -1,15 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Closed Loop Embedded">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LoopCore">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#17407a"/>
-      <stop offset="1" stop-color="#0b1f3a"/>
+    <linearGradient id="lc-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#34f5a4"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
-  <rect x=".75" y=".75" width="62.5" height="62.5" rx="14.25" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="1.5"/>
-  <!-- forward path, plant, and feedback path of a control loop -->
-  <path d="M21 23H45a10.5 10.5 0 0 1 0 21H24a9 9 0 0 1-9-9v-3.5" fill="none" stroke="#f08a24" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M9.6 35.6 15 29.8l5.4 5.8" fill="none" stroke="#f08a24" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="27.5" y="15.5" width="15" height="15" rx="3.6" fill="#ffffff"/>
-  <circle cx="15" cy="23" r="5.4" fill="#0f2a50" stroke="#ffffff" stroke-width="3.4"/>
+  <rect width="64" height="64" rx="14" fill="#050a14"/>
+  <!-- chip pins -->
+  <g stroke="url(#lc-g)" stroke-width="2.6" stroke-linecap="round">
+    <path d="M22 5v6M32 5v6M42 5v6M22 53v6M32 53v6M42 53v6M5 22h6M5 32h6M5 42h6M53 22h6M53 32h6M53 42h6"/>
+  </g>
+  <!-- chip body -->
+  <rect x="12" y="12" width="40" height="40" rx="8" fill="#08121f" stroke="url(#lc-g)" stroke-width="2.6"/>
+  <!-- control loop -->
+  <path d="M41.5 27.2A10.6 10.6 0 1 0 42.6 32" fill="none" stroke="url(#lc-g)" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M36.6 24.6l5.6 3.4 2.2-6.2" fill="none" stroke="#34f5a4" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- core -->
+  <circle cx="32" cy="32" r="4.2" fill="#ffb020"/>
 </svg>
