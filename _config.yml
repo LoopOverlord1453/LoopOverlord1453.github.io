@@ -1,0 +1,22 @@
+title: Kubilay's Engineering Notes
+description: >-
+  Notes and projects on embedded Linux, signal processing, and control systems.
+lang: en
+theme: minima
+
+url: "https://LoopOverlord1453.github.io"
+baseurl: ""
+
+github_username: LoopOverlord1453
+
+# Pages shown in the top navigation, in this order
+header_pages:
+  - projects.md
+  - about.md
+
+permalink: /:year/:month/:title/
+show_excerpts: true
+timezone: Europe/Istanbul
+
+exclude:
+  - README.md
