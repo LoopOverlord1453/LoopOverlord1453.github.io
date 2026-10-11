@@ -140,14 +140,14 @@
     title: Menu-Driven Control Panel
     status: Open source
     summary: >-
-      A menu system on a character LCD implemented as an event-driven finite state machine,
-      controlling a servo, a stepper motor, LEDs, and a pressure sensor.
+      A menu system on a character LCD implemented as an event-driven finite state machine, with
+      debounced buttons, filtered analog input, and servo calibration.
   tr:
     title: Menü Tabanlı Kontrol Paneli
     status: Açık kaynak
     summary: >-
       Karakter LCD üzerinde, olay güdümlü sonlu durum makinesi olarak gerçeklenmiş menü sistemi;
-      servo, adım motoru, LED ve basınç sensörünü kontrol eder.
+      titreşimi giderilmiş düğmeler, filtrelenmiş analog giriş ve servo kalibrasyonu içerir.
 
 - ref: vio-zynq
   code: FPGA
