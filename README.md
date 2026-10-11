@@ -1,4 +1,4 @@
-# LoopCore
+# KernelForge
 
 Source for my personal site: projects and tutorials on embedded software, embedded Linux, signal
 processing, and control systems. The site is available in English and Turkish.

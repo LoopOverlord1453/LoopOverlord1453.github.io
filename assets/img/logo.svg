@@ -1,20 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LoopCore">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KernelForge">
   <defs>
-    <linearGradient id="lc-g" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="kf-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="64" y2="64">
       <stop offset="0" stop-color="#22d3ee"/>
       <stop offset="1" stop-color="#34f5a4"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="#050a14"/>
   <!-- chip pins -->
-  <g stroke="url(#lc-g)" stroke-width="2.6" stroke-linecap="round">
+  <g stroke="url(#kf-g)" stroke-width="2.6" stroke-linecap="round">
     <path d="M22 5v6M32 5v6M42 5v6M22 53v6M32 53v6M42 53v6M5 22h6M5 32h6M5 42h6M53 22h6M53 32h6M53 42h6"/>
   </g>
   <!-- chip body -->
-  <rect x="12" y="12" width="40" height="40" rx="8" fill="#08121f" stroke="url(#lc-g)" stroke-width="2.6"/>
-  <!-- control loop -->
-  <path d="M41.5 27.2A10.6 10.6 0 1 0 42.6 32" fill="none" stroke="url(#lc-g)" stroke-width="3.4" stroke-linecap="round"/>
-  <path d="M36.6 24.6l5.6 3.4 2.2-6.2" fill="none" stroke="#34f5a4" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- core -->
-  <circle cx="32" cy="32" r="4.2" fill="#ffb020"/>
+  <rect x="12" y="12" width="40" height="40" rx="8" fill="#08121f" stroke="url(#kf-g)" stroke-width="2.6"/>
+  <!-- letter K drawn as board traces ending in pads -->
+  <g fill="none" stroke="url(#kf-g)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 21v22"/>
+    <path d="M24 32h5l10-10"/>
+    <path d="M29 32l10 10"/>
+  </g>
+  <circle cx="40.5" cy="20.5" r="3.4" fill="#08121f" stroke="#34f5a4" stroke-width="2.2"/>
+  <circle cx="40.5" cy="43.5" r="3.4" fill="#08121f" stroke="#34f5a4" stroke-width="2.2"/>
+  <!-- spark at the junction -->
+  <circle cx="29" cy="32" r="3.6" fill="#ffb020"/>
 </svg>

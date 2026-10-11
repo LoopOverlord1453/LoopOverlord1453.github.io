@@ -8,11 +8,7 @@
   {% assign detail_url = base | append: '/projects/' | append: project.ref | append: '/' %}
   <article class="project-card">
     {% if project.detail %}<a class="project-shot-link" href="{{ detail_url | relative_url }}" tabindex="-1" aria-hidden="true">{% endif %}
-    {% if project.image %}
-    <img class="project-shot" src="{{ project.image | relative_url }}" alt="" loading="lazy">
-    {% else %}
     <div class="project-shot project-shot-empty">{% include project-icon.html %}<span>{{ project.code }}</span></div>
-    {% endif %}
     {% if project.detail %}</a>{% endif %}
     <div class="project-body">
       <span class="status status-{{ project.kind }}">{{ text.status }}</span>

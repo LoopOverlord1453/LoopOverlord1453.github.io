@@ -1,4 +1,4 @@
-/* LoopCore — site animations. Everything here is decoration: the site works without it. */
+/* KernelForge — site animations. Everything here is decoration: the site works without it. */
 (function () {
   'use strict';
 
