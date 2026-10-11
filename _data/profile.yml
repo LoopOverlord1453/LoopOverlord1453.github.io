@@ -1,0 +1,31 @@
+# Everything on the About page comes from this file.
+# Empty fields and empty lists are simply not shown.
+
+name: Kubilay
+role: Embedded Software Engineer
+company: Profen
+location: İstanbul
+
+# Put a square photo in assets/img/ and write its path here, for example /assets/img/profile.jpg
+photo: ""
+
+links:
+  - label: GitHub
+    url: https://github.com/LoopOverlord1453
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/kubilay-k%C3%B6zleme-533872206/
+
+# Newest first. `period` is free text, for example "2025 – present · 1 yr".
+experience:
+  - title: Embedded Software Engineer
+    org: Profen
+    place: İstanbul
+    period: ""
+    summary: ""
+
+# Newest first, for example:
+#   - degree: BSc, Electrical and Electronics Engineering
+#     school: Example University
+#     period: 2020 – 2024
+#     note: ""
+education: []

@@ -1,22 +1,79 @@
-# Projects shown on the home page and the Projects page, in this order.
+# Featured projects, shown as cards on the home page and the Projects page, in this order.
 # status_kind sets the badge colour: active, building, or planned.
+# featured: true puts the card on the home page as well.
 - title: Signal Processing Studio
   code: DSP
   status: Active
   status_kind: active
+  featured: true
   image: /assets/img/signal-processing-studio.png
   summary: >-
     A desktop workbench for real-time signal analysis and control design. It streams live data
     from a target board over UDP, then lets you filter it, fuse sensors, identify a model, design
     a controller, and export the result as C code for a microcontroller.
   tags: [Python, PyQt6, DSP, Sensor fusion, MPC, C code generation]
-  link: https://github.com/LoopOverlord1453/signal-processing-studio
+  link: https://github.com/LoopOverlord1453/sinyal-isleme-studyosu
+  link_label: Source on GitHub
+
+- title: UML Design Studio
+  code: UML
+  status: Open source
+  status_kind: active
+  featured: true
+  summary: >-
+    A UML 2.5.1 editor for state machines and class diagrams that generates C11 and C++11 code
+    from the model.
+  tags: [Python, UML, State machines, Code generation]
+  link: https://github.com/LoopOverlord1453/uml-design-studio
+  link_label: Source on GitHub
+
+- title: Real-Time Quadcopter Flight Software
+  code: RTOS
+  status: Open source
+  status_kind: active
+  featured: true
+  summary: >-
+    Embedded flight software for a quadcopter with a modular, RTOS-based architecture, covering
+    sensor fusion with complementary and Kalman filters and the flight controller.
+  tags: [C, STM32, RTOS, Kalman filter, Sensor fusion]
+  link: https://github.com/LoopOverlord1453/real-time-quadcopter-flight-software
+  link_label: Source on GitHub
+
+- title: Quadcopter Subsystem Software Library
+  code: LIB
+  status: Open source
+  status_kind: active
+  summary: >-
+    A modular, deterministic sensor library for quadcopter applications on STM32.
+  tags: [C, STM32, Sensor fusion]
+  link: https://github.com/LoopOverlord1453/quadcopter-subsystem-software-library
+  link_label: Source on GitHub
+
+- title: ARM Motion Control
+  code: RS485
+  status: Open source
+  status_kind: active
+  summary: >-
+    Motor and sensor control over a UART-RS485 link on STM32, built during a 2024 summer internship.
+  tags: [C, STM32, RS-485, Motor control]
+  link: https://github.com/LoopOverlord1453/arm-motion-control
+  link_label: Source on GitHub
+
+- title: STM32F407 Bare-Metal Driver Library
+  code: HAL
+  status: Open source
+  status_kind: active
+  summary: >-
+    A bare-metal peripheral driver library for the STM32F407.
+  tags: [C, STM32F407, Bare metal, Drivers]
+  link: https://github.com/LoopOverlord1453/stm32f407-bare-metal-driver-library
   link_label: Source on GitHub
 
 - title: Visual-Thermal-Inertial Odometry on Zynq
   code: FPGA
   status: Planning
   status_kind: planned
+  featured: true
   summary: >-
     Navigation for small UAVs without satellite positioning. Feature detection and tracking run
     in FPGA fabric, a multi-camera MSCKF estimator runs on the ARM cores, and a thermal camera
@@ -27,6 +84,7 @@
   code: AI
   status: Getting started
   status_kind: building
+  featured: true
   summary: >-
     Deploying quantized vision models on a microcontroller with a neural accelerator, and
     measuring what it costs in latency, memory, and power.
@@ -36,6 +94,7 @@
   code: LNX
   status: Tutorial series
   status_kind: building
+  featured: true
   summary: >-
     A step-by-step series from first boot to a custom image: toolchains, device trees, kernel
     builds, drivers, U-Boot, Buildroot, and Yocto.

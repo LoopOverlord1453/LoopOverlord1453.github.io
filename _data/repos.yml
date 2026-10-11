@@ -1,0 +1,30 @@
+# Smaller repositories, listed compactly at the bottom of the Projects page.
+- name: bno055-stm32-driver-library
+  title: BNO055 IMU driver
+  summary: STM32 driver for the BNO055 9-DOF inertial measurement unit with on-chip sensor fusion.
+  language: C
+
+- name: ina219-current-sensor
+  title: INA219 current sensor driver
+  summary: Driver for the INA219 current and power monitor, written during an internship.
+  language: C
+
+- name: bmp180
+  title: BMP180 barometer driver
+  summary: Pressure and altitude driver written for a medium-altitude rocket project.
+  language: C
+
+- name: Data-Logger
+  title: Data Logger
+  summary: Data logging firmware.
+  language: C
+
+- name: 2x16-lcd-library-for-tm4c123gh6pm
+  title: 2x16 LCD library for the TM4C123GH6PM
+  summary: Character LCD library written for a university microcontroller course.
+  language: C
+
+- name: 2x16-lcd-clock-app-for-tm4c123gh6pm
+  title: LCD clock for the TM4C123GH6PM
+  summary: A clock application on a 2x16 character LCD, built as course homework.
+  language: C

@@ -1,5 +1,6 @@
 <div class="project-grid">
   {% for project in site.data.projects %}
+  {% if only_featured and project.featured != true %}{% continue %}{% endif %}
   <article class="project-card">
     {% if project.image %}
     <img class="project-shot" src="{{ project.image | relative_url }}" alt="Screenshot of {{ project.title }}" loading="lazy">
