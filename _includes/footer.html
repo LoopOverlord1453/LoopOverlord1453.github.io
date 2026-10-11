@@ -1,6 +1,8 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
 <footer class="site-footer">
   <div class="wrap footer-row">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. Built with Jekyll.</p>
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author }}. {{ t.footer_built }}</p>
     <p>
       <a href="https://github.com/{{ site.github_username }}">GitHub</a>
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>

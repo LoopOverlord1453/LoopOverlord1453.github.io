@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign base = '' %}{% if lang == 'tr' %}{% assign base = '/tr' %}{% endif %}
+{% assign project = site.data.projects | where: "ref", page.ref | first %}
+{% assign text = project[lang] %}
+<section class="page-head">
+  <div class="wrap">
+    <a class="back-link" href="{{ base | append: '/projects/' | relative_url }}">&larr; {{ t.back_projects }}</a>
+    <h1>{{ text.title }}</h1>
+    <p class="lead">{{ text.summary }}</p>
+    <div class="project-meta">
+      <span class="status status-on-dark">{{ text.status }}</span>
+      <ul class="tags tags-on-dark">
+        {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% if project.repo %}
+    <p class="hero-actions"><a class="button button-primary" href="{{ project.repo }}">{{ t.source }}</a></p>
+    {% endif %}
+  </div>
+</section>
+<article class="wrap prose project-prose">
+  {% if project.image %}
+  <img class="project-hero-shot" src="{{ project.image | relative_url }}" alt="{{ text.title }}">
+  {% endif %}
+  {{ content }}
+</article>
+<nav class="wrap post-nav project-prose" aria-label="Projects">
+  <a href="{{ base | append: '/projects/' | relative_url }}">&larr; {{ t.back_projects }}</a>
+  {% if project.repo %}<a href="{{ project.repo }}">{{ t.source }} &rarr;</a>{% endif %}
+</nav>

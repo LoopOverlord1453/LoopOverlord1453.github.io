@@ -2,20 +2,8 @@
 layout: page
 title: Projects
 permalink: /projects/
-lead: Things I have built and things I am building, with an honest status on each.
+lang: en
+lead: Things I have built and things I am building. Open a project to read how it works.
 wide: true
 ---
-{% assign only_featured = false %}
-{% include project-cards.html %}
-
-<h2 class="list-title">Drivers and smaller libraries</h2>
-<div class="repo-list">
-  {% for repo in site.data.repos %}
-  <a class="repo-row" href="https://github.com/{{ site.github_username }}/{{ repo.name }}">
-    <span class="repo-title">{{ repo.title }}</span>
-    <span class="repo-summary">{{ repo.summary }}</span>
-    <span class="repo-lang">{{ repo.language }}</span>
-  </a>
-  {% endfor %}
-</div>
-<p class="list-foot">Everything else is on <a href="https://github.com/{{ site.github_username }}?tab=repositories">my GitHub profile</a>.</p>
+{% include pages/projects.html %}

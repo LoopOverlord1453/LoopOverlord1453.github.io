@@ -1,108 +1,203 @@
-# Featured projects, shown as cards on the home page and the Projects page, in this order.
-# status_kind sets the badge colour: active, building, or planned.
-# featured: true puts the card on the home page as well.
-- title: Signal Processing Studio
+# Project cards, in display order.
+#   ref       matches the `ref` of the detail page in _projects/ (and _projects/tr/)
+#   kind      badge colour: active, building, or planned
+#   featured  true puts the card on the home page as well
+#   detail    true means a detail page exists for this project
+- ref: signal-processing-studio
   code: DSP
-  status: Active
-  status_kind: active
+  kind: active
   featured: true
+  detail: true
   image: /assets/img/signal-processing-studio.png
-  summary: >-
-    A desktop workbench for real-time signal analysis and control design. It streams live data
-    from a target board over UDP, then lets you filter it, fuse sensors, identify a model, design
-    a controller, and export the result as C code for a microcontroller.
+  repo: https://github.com/LoopOverlord1453/sinyal-isleme-studyosu
   tags: [Python, PyQt6, DSP, Sensor fusion, MPC, C code generation]
-  link: https://github.com/LoopOverlord1453/sinyal-isleme-studyosu
-  link_label: Source on GitHub
+  en:
+    title: Signal Processing Studio
+    status: Active
+    summary: >-
+      A desktop workbench for real-time signal analysis and control design. It streams live data
+      from a target board over UDP, then lets you filter it, fuse sensors, identify a model, design
+      a controller, and export the result as C code for a microcontroller.
+  tr:
+    title: Sinyal İşleme Stüdyosu
+    status: Aktif
+    summary: >-
+      Gerçek zamanlı sinyal analizi ve kontrol tasarımı için masaüstü uygulaması. Karttan UDP ile
+      canlı veri alır; filtreleme, sensör füzyonu, model tanımlama ve kontrolcü tasarımı yapar,
+      sonucu mikrodenetleyici için C koduna dönüştürür.
 
-- title: UML Design Studio
+- ref: uml-design-studio
   code: UML
-  status: Open source
-  status_kind: active
+  kind: active
   featured: true
+  detail: true
   image: /assets/img/uml-design-studio.png
-  summary: >-
-    Draw a UML 2.5.1 state machine or class diagram and generate MISRA-aware C11 or C++11 for a
-    microcontroller project. The diagram is the source, so the firmware and the design document
-    cannot drift apart. Includes a simulator and built-in version control.
-  tags: [Python, UML, State machines, MISRA, Code generation]
-  link: https://github.com/LoopOverlord1453/uml-design-studio
-  link_label: Source on GitHub
+  repo: https://github.com/LoopOverlord1453/uml-design-studio
+  tags: [Python, PyQt6, UML, State machines, MISRA, Code generation]
+  en:
+    title: UML Design Studio
+    status: Open source
+    summary: >-
+      Draw a UML 2.5.1 state machine or class diagram and generate MISRA-aware C11 or C++11 for a
+      microcontroller project. The diagram is the source, so the firmware and the design document
+      cannot drift apart.
+  tr:
+    title: UML Design Studio
+    status: Açık kaynak
+    summary: >-
+      UML 2.5.1 durum makinesi veya sınıf diyagramı çizip mikrodenetleyici projesi için MISRA
+      uyumlu C11 veya C++11 kodu üreten editör. Kaynak diyagramın kendisidir; kod ile tasarım
+      belgesi birbirinden kopamaz.
 
-- title: Real-Time Quadcopter Flight Software
+- ref: quadcopter-flight-software
   code: RTOS
-  status: Open source
-  status_kind: active
+  kind: building
   featured: true
-  summary: >-
-    Embedded flight software for a quadcopter with a modular, RTOS-based architecture, covering
-    sensor fusion with complementary and Kalman filters and the flight controller.
-  tags: [C, STM32, RTOS, Kalman filter, Sensor fusion]
-  link: https://github.com/LoopOverlord1453/real-time-quadcopter-flight-software
-  link_label: Source on GitHub
+  detail: true
+  repo: https://github.com/LoopOverlord1453/real-time-quadcopter-flight-software
+  tags: [C, STM32F407, FreeRTOS, Kalman filter, Madgwick, PID]
+  en:
+    title: Real-Time Quadcopter Flight Software
+    status: In development
+    summary: >-
+      Modular flight software for a quadcopter on an STM32F407 with FreeRTOS: sensor drivers,
+      attitude estimation with four fusion algorithms, digital filters, and a PID controller, each
+      as an independent library.
+  tr:
+    title: Gerçek Zamanlı Quadcopter Uçuş Yazılımı
+    status: Geliştiriliyor
+    summary: >-
+      STM32F407 ve FreeRTOS üzerinde modüler quadcopter uçuş yazılımı: sensör sürücüleri, dört
+      füzyon algoritmasıyla yönelim kestirimi, sayısal filtreler ve PID kontrolcü; her biri
+      bağımsız bir kütüphane.
 
-- title: Quadcopter Subsystem Software Library
+- ref: rt-sense
   code: LIB
-  status: Open source
-  status_kind: active
-  summary: >-
-    RT-Sense: portable, dependency-free C drivers for the BMP388 barometer, BMI160 IMU, and
-    HMC5883L magnetometer, using data-ready interrupts for deterministic timing on STM32.
-  tags: [C, STM32, BMP388, BMI160, HMC5883L]
-  link: https://github.com/LoopOverlord1453/quadcopter-subsystem-software-library
-  link_label: Source on GitHub
+  kind: active
+  featured: true
+  detail: true
+  repo: https://github.com/LoopOverlord1453/quadcopter-subsystem-software-library
+  tags: [C, STM32, BMP388, BMI160, HMC5883L, I2C, SPI]
+  en:
+    title: "RT-Sense: Quadcopter Sensor Library"
+    status: Open source
+    summary: >-
+      Portable, dependency-free C drivers for a barometer, an IMU, and a magnetometer, built
+      around data-ready interrupts so that every sample arrives at a known time.
+  tr:
+    title: "RT-Sense: Quadcopter Sensör Kütüphanesi"
+    status: Açık kaynak
+    summary: >-
+      Barometre, IMU ve manyetometre için taşınabilir, bağımlılıksız C sürücüleri. Veri hazır
+      kesmeleri üzerine kuruludur; her örnek bilinen bir anda gelir.
 
-- title: ARM Motion Control
+- ref: arm-motion-control
   code: RS485
-  status: Open source
-  status_kind: active
-  summary: >-
-    A DC-motor-driven mechanical arm controlled from a C# desktop interface over UART on RS-485,
-    with manual and automatic modes. Commands are stored in flash so the system resumes from its
-    last state after a power loss. Built during a 2024 summer internship.
-  tags: [C, STM32, "C#", RS-485, Motor control]
-  link: https://github.com/LoopOverlord1453/arm-motion-control
-  link_label: Source on GitHub
+  kind: active
+  featured: true
+  detail: true
+  repo: https://github.com/LoopOverlord1453/arm-motion-control
+  tags: [C, STM32F030, "C#", RS-485, CRC16, Flash]
+  en:
+    title: ARM Motion Control
+    status: Internship project
+    summary: >-
+      A motor-driven mechanical arm controlled from a C# desktop interface over RS-485, with a
+      CRC-protected packet protocol and automatic recovery after power loss.
+  tr:
+    title: ARM Motion Control
+    status: Staj projesi
+    summary: >-
+      C# masaüstü arayüzünden RS-485 üzerinden kontrol edilen motorlu mekanik kol. CRC korumalı
+      paket protokolü ve elektrik kesintisinden sonra kaldığı yerden devam özelliği içerir.
 
-- title: STM32F407 Bare-Metal Driver Library
-  code: HAL
-  status: Open source
-  status_kind: active
-  summary: >-
-    A bare-metal peripheral driver library for the STM32F407.
-  tags: [C, STM32F407, Bare metal, Drivers]
-  link: https://github.com/LoopOverlord1453/stm32f407-bare-metal-driver-library
-  link_label: Source on GitHub
+- ref: stm32f407-bare-metal
+  code: REG
+  kind: active
+  detail: true
+  repo: https://github.com/LoopOverlord1453/stm32f407-bare-metal-driver-library
+  tags: [C, STM32F407, Bare metal, CMSIS]
+  en:
+    title: STM32F407 Bare-Metal Driver Library
+    status: Open source
+    summary: >-
+      Peripheral drivers written directly against the registers, using only the CMSIS device
+      headers and no vendor HAL.
+  tr:
+    title: STM32F407 Bare-Metal Sürücü Kütüphanesi
+    status: Açık kaynak
+    summary: >-
+      Üretici HAL'i olmadan, yalnızca CMSIS aygıt başlıklarıyla doğrudan yazmaç düzeyinde yazılmış
+      çevre birimi sürücüleri.
 
-- title: Visual-Thermal-Inertial Odometry on Zynq
+- ref: control-panel-fsm
+  code: FSM
+  kind: active
+  detail: true
+  repo: https://github.com/LoopOverlord1453/Data-Logger
+  tags: [C, STM32F407, State machine, I2C LCD]
+  en:
+    title: Menu-Driven Control Panel
+    status: Open source
+    summary: >-
+      A menu system on a character LCD implemented as an event-driven finite state machine,
+      controlling a servo, a stepper motor, LEDs, and a pressure sensor.
+  tr:
+    title: Menü Tabanlı Kontrol Paneli
+    status: Açık kaynak
+    summary: >-
+      Karakter LCD üzerinde, olay güdümlü sonlu durum makinesi olarak gerçeklenmiş menü sistemi;
+      servo, adım motoru, LED ve basınç sensörünü kontrol eder.
+
+- ref: vio-zynq
   code: FPGA
-  status: Planning
-  status_kind: planned
-  featured: true
-  summary: >-
-    Navigation for small UAVs without satellite positioning. Feature detection and tracking run
-    in FPGA fabric, a multi-camera MSCKF estimator runs on the ARM cores, and a thermal camera
-    extends operation into the night.
+  kind: planned
   tags: [Zynq-7020, FPGA, State estimation, Computer vision]
+  en:
+    title: Visual-Thermal-Inertial Odometry on Zynq
+    status: Planning
+    summary: >-
+      Navigation for small UAVs without satellite positioning. Feature detection and tracking run
+      in FPGA fabric, a multi-camera MSCKF estimator runs on the ARM cores, and a thermal camera
+      extends operation into the night.
+  tr:
+    title: Zynq Üzerinde Görsel-Termal-Ataletsel Odometri
+    status: Planlama
+    summary: >-
+      Küçük İHA'lar için uydusuz navigasyon. Öznitelik çıkarma ve izleme FPGA'da, çoklu kamera
+      MSCKF kestiricisi ARM çekirdeklerinde çalışır; termal kamera gece kullanımını sağlar.
 
-- title: Edge AI on the STM32N6
+- ref: edge-ai-stm32n6
   code: AI
-  status: Getting started
-  status_kind: building
-  featured: true
-  summary: >-
-    Deploying quantized vision models on a microcontroller with a neural accelerator, and
-    measuring what it costs in latency, memory, and power.
+  kind: building
   tags: [STM32N6, Quantization, Computer vision]
+  en:
+    title: Edge AI on the STM32N6
+    status: Getting started
+    summary: >-
+      Deploying quantized vision models on a microcontroller with a neural accelerator, and
+      measuring what it costs in latency, memory, and power.
+  tr:
+    title: STM32N6 ile Uç Yapay Zekâ
+    status: Başlangıç
+    summary: >-
+      Nicemlenmiş görüntü modellerini sinir ağı hızlandırıcılı bir mikrodenetleyicide çalıştırmak
+      ve gecikme, bellek ve güç maliyetini ölçmek.
 
-- title: Embedded Linux on a BeagleBone Green
+- ref: embedded-linux-series
   code: LNX
-  status: Tutorial series
-  status_kind: building
-  featured: true
-  summary: >-
-    A step-by-step series from first boot to a custom image: toolchains, device trees, kernel
-    builds, drivers, U-Boot, Buildroot, and Yocto.
-  tags: [AM335x, Kernel, Device tree, Yocto]
+  kind: building
   link: /tutorials/#embedded-linux
-  link_label: Follow the series
+  tags: [AM335x, Kernel, Device tree, Yocto]
+  en:
+    title: Embedded Linux on a BeagleBone Green
+    status: Tutorial series
+    summary: >-
+      A step-by-step series from first boot to a custom image: toolchains, device trees, kernel
+      builds, drivers, U-Boot, Buildroot, and Yocto.
+  tr:
+    title: BeagleBone Green ile Gömülü Linux
+    status: Eğitim serisi
+    summary: >-
+      İlk açılıştan özel imaja adım adım bir seri: araç zincirleri, aygıt ağacı, çekirdek derleme,
+      sürücüler, U-Boot, Buildroot ve Yocto.

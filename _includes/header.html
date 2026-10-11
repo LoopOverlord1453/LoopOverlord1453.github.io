@@ -1,6 +1,15 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == 'tr' %}
+  {% assign base = '/tr' %}
+  {% assign alt_url = page.url | remove_first: '/tr' %}
+{% else %}
+  {% assign base = '' %}
+  {% assign alt_url = page.url | prepend: '/tr' %}
+{% endif %}
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+    <a class="brand" href="{{ base | append: '/' | relative_url }}" aria-label="{{ site.title }}">
       <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="40" height="40">
       <span class="brand-text">
         <span class="brand-name">Closed<b>Loop</b></span>
@@ -8,10 +17,13 @@
       </span>
     </a>
     <nav class="site-nav" aria-label="Main">
-      <a href="{{ '/tutorials/' | relative_url }}"{% if page.url contains '/tutorials/' %} class="current"{% endif %}>Tutorials</a>
-      <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} class="current"{% endif %}>Projects</a>
-      <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about/' %} class="current"{% endif %}>About</a>
+      <a href="{{ base | append: '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} class="current"{% endif %}>{{ t.nav_projects }}</a>
+      <a href="{{ base | append: '/tutorials/' | relative_url }}"{% if page.url contains '/tutorials/' %} class="current"{% endif %}>{{ t.nav_tutorials }}</a>
+      <a href="{{ base | append: '/about/' | relative_url }}"{% if page.url contains '/about/' %} class="current"{% endif %}>{{ t.nav_about }}</a>
       <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      {% unless page.no_translation %}
+      <a class="lang-switch" href="{{ alt_url | relative_url }}" title="{{ t.switch_title }}" hreflang="{% if lang == 'tr' %}en{% else %}tr{% endif %}">{{ t.switch_label }}</a>
+      {% endunless %}
     </nav>
   </div>
 </header>

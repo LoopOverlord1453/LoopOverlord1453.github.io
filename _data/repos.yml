@@ -1,30 +1,45 @@
 # Smaller repositories, listed compactly at the bottom of the Projects page.
 - name: bno055-stm32-driver-library
-  title: BNO055 IMU driver
-  summary: STM32 driver for the BNO055 9-DOF inertial measurement unit with on-chip sensor fusion.
   language: C
+  en:
+    title: BNO055 IMU driver
+    summary: STM32 driver for the BNO055 9-DOF inertial measurement unit with on-chip sensor fusion.
+  tr:
+    title: BNO055 IMU sürücüsü
+    summary: Dahili sensör füzyonlu 9 eksenli BNO055 ataletsel ölçüm birimi için STM32 sürücüsü.
 
 - name: ina219-current-sensor
-  title: INA219 current sensor driver
-  summary: Driver for the INA219 current and power monitor, written during an internship.
   language: C
+  en:
+    title: INA219 current sensor driver
+    summary: STM32 driver for the INA219 current and power monitor, written during an internship.
+  tr:
+    title: INA219 akım sensörü sürücüsü
+    summary: INA219 akım ve güç ölçer için staj sırasında yazılmış STM32 sürücüsü.
 
 - name: bmp180
-  title: BMP180 barometer driver
-  summary: Pressure and altitude driver written for a medium-altitude rocket project.
   language: C
-
-- name: Data-Logger
-  title: Data Logger
-  summary: Data logging firmware.
-  language: C
+  en:
+    title: BMP180 barometer driver
+    summary: Pressure and altitude driver written for a medium-altitude rocket project.
+  tr:
+    title: BMP180 barometre sürücüsü
+    summary: Orta irtifa roket projesi için yazılmış basınç ve irtifa sürücüsü.
 
 - name: 2x16-lcd-library-for-tm4c123gh6pm
-  title: 2x16 LCD library for the TM4C123GH6PM
-  summary: Character LCD library written for a university microcontroller course.
   language: C
+  en:
+    title: 2x16 LCD library for the TM4C123GH6PM
+    summary: Character LCD library written for a university microcontroller course.
+  tr:
+    title: TM4C123GH6PM için 2x16 LCD kütüphanesi
+    summary: Üniversitedeki mikrodenetleyici dersi için yazılmış karakter LCD kütüphanesi.
 
 - name: 2x16-lcd-clock-app-for-tm4c123gh6pm
-  title: LCD clock for the TM4C123GH6PM
-  summary: A clock application on a 2x16 character LCD, built as course homework.
   language: C
+  en:
+    title: LCD clock for the TM4C123GH6PM
+    summary: A clock application on a 2x16 character LCD, built as course homework.
+  tr:
+    title: TM4C123GH6PM için LCD saat
+    summary: Ders ödevi olarak yapılmış, 2x16 karakter LCD üzerinde saat uygulaması.

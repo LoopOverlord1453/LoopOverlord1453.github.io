@@ -1,0 +1,88 @@
+# Interface text in both languages. Page content lives in _includes/pages/ and _projects/.
+en:
+  nav_tutorials: Tutorials
+  nav_projects: Projects
+  nav_about: About
+  switch_label: Türkçe
+  switch_title: Bu sayfayı Türkçe oku
+  hero_eyebrow: Embedded software engineer
+  hero_title: Embedded systems, from the signal to the control loop.
+  hero_lead: >-
+    I build firmware, desktop engineering tools, and control software. This site documents my
+    projects in detail and the things I learn along the way.
+  hero_cta_projects: See my projects
+  hero_cta_about: About me
+  hero_now_1: Learning embedded Linux
+  hero_now_2: on a BeagleBone Green.
+  tracks_title: Tutorial tracks
+  tracks_sub: Pick a topic and follow it from the first step.
+  coming_soon: Coming soon
+  post_one: 1 post
+  post_many: posts
+  projects_title: Projects
+  all_projects: All projects
+  latest_posts: Latest posts
+  all_tutorials: All tutorials
+  teaser_title: Hi, I'm Kubilay.
+  teaser_text: >-
+    I'm an embedded software engineer based in İstanbul. I write firmware for STM32
+    microcontrollers, build the desktop tools I wish I had, and work on estimation and control.
+  teaser_link: More about me
+  part: Part
+  empty_track: Nothing here yet. The first post in this track is on the way.
+  small_title: Drivers and smaller libraries
+  small_foot: Everything else is on
+  small_foot_link: my GitHub profile
+  details: Read the details
+  source: Source on GitHub
+  follow_series: Follow the series
+  back_projects: All projects
+  at: at
+  experience: Experience
+  education: Education
+  skills: Technical skills
+  footer_built: Built with Jekyll.
+tr:
+  nav_tutorials: Eğitimler
+  nav_projects: Projeler
+  nav_about: Hakkımda
+  switch_label: English
+  switch_title: Read this page in English
+  hero_eyebrow: Gömülü yazılım mühendisi
+  hero_title: Sinyalden kontrol çevrimine gömülü sistemler.
+  hero_lead: >-
+    Gömülü yazılım, masaüstü mühendislik araçları ve kontrol yazılımı geliştiriyorum. Bu sitede
+    projelerimi ayrıntılarıyla ve öğrendiklerimi paylaşıyorum.
+  hero_cta_projects: Projelerimi gör
+  hero_cta_about: Hakkımda
+  hero_now_1: BeagleBone Green üzerinde
+  hero_now_2: gömülü Linux öğreniyorum.
+  tracks_title: Eğitim başlıkları
+  tracks_sub: Bir konu seçin ve ilk adımdan itibaren izleyin.
+  coming_soon: Yakında
+  post_one: 1 yazı
+  post_many: yazı
+  projects_title: Projeler
+  all_projects: Tüm projeler
+  latest_posts: Son yazılar
+  all_tutorials: Tüm eğitimler
+  teaser_title: Merhaba, ben Kubilay.
+  teaser_text: >-
+    İstanbul'da çalışan bir gömülü yazılım mühendisiyim. STM32 mikrodenetleyiciler için yazılım
+    geliştiriyor, ihtiyaç duyduğum masaüstü araçlarını kendim yazıyor, kestirim ve kontrol üzerine
+    çalışıyorum.
+  teaser_link: Hakkımda daha fazlası
+  part: Bölüm
+  empty_track: Henüz yazı yok. Bu başlığın ilk yazısı hazırlanıyor.
+  small_title: Sürücüler ve küçük kütüphaneler
+  small_foot: Diğer tüm çalışmalarım
+  small_foot_link: GitHub profilimde
+  details: Ayrıntıları oku
+  source: GitHub'da kaynak kod
+  follow_series: Seriyi izle
+  back_projects: Tüm projeler
+  at: "-"
+  experience: Deneyim
+  education: Eğitim
+  skills: Teknik beceriler
+  footer_built: Jekyll ile hazırlandı.

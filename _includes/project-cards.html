@@ -1,22 +1,31 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign base = '' %}{% if lang == 'tr' %}{% assign base = '/tr' %}{% endif %}
 <div class="project-grid">
   {% for project in site.data.projects %}
   {% if only_featured and project.featured != true %}{% continue %}{% endif %}
+  {% assign text = project[lang] %}
+  {% assign detail_url = base | append: '/projects/' | append: project.ref | append: '/' %}
   <article class="project-card">
+    {% if project.detail %}<a class="project-shot-link" href="{{ detail_url | relative_url }}" tabindex="-1" aria-hidden="true">{% endif %}
     {% if project.image %}
-    <img class="project-shot" src="{{ project.image | relative_url }}" alt="Screenshot of {{ project.title }}" loading="lazy">
+    <img class="project-shot" src="{{ project.image | relative_url }}" alt="" loading="lazy">
     {% else %}
-    <div class="project-shot project-shot-empty" aria-hidden="true"><span>{{ project.code }}</span></div>
+    <div class="project-shot project-shot-empty"><span>{{ project.code }}</span></div>
     {% endif %}
+    {% if project.detail %}</a>{% endif %}
     <div class="project-body">
-      <span class="status status-{{ project.status_kind }}">{{ project.status }}</span>
-      <h3>{{ project.title }}</h3>
-      <p>{{ project.summary }}</p>
+      <span class="status status-{{ project.kind }}">{{ text.status }}</span>
+      <h3>{% if project.detail %}<a href="{{ detail_url | relative_url }}">{{ text.title }}</a>{% else %}{{ text.title }}{% endif %}</h3>
+      <p>{{ text.summary }}</p>
       <ul class="tags">
         {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
       </ul>
-      {% if project.link %}
-      <a class="card-link" href="{% if project.link contains '://' %}{{ project.link }}{% else %}{{ project.link | relative_url }}{% endif %}">{{ project.link_label }} &rarr;</a>
-      {% endif %}
+      <p class="card-links">
+        {% if project.detail %}<a class="card-link" href="{{ detail_url | relative_url }}">{{ t.details }} &rarr;</a>{% endif %}
+        {% if project.repo %}<a class="card-link card-link-quiet" href="{{ project.repo }}">GitHub</a>{% endif %}
+        {% if project.link %}<a class="card-link" href="{{ base | append: project.link | relative_url }}">{{ t.follow_series }} &rarr;</a>{% endif %}
+      </p>
     </div>
   </article>
   {% endfor %}

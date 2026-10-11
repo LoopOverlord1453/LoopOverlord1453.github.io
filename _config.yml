@@ -1,8 +1,8 @@
 title: Closed Loop Embedded
 tagline: Embedded systems, from the signal to the control loop
 description: >-
-  Tutorials and projects on embedded Linux, signal processing, control systems,
-  edge AI, and FPGA design.
+  Tutorials and projects on embedded software, embedded Linux, signal processing,
+  control systems, edge AI, and FPGA design.
 author: Kubilay
 lang: en
 
@@ -16,6 +16,18 @@ timezone: Europe/Istanbul
 
 markdown: kramdown
 highlighter: rouge
+
+# Project detail pages live in _projects/ (English) and _projects/tr/ (Turkish).
+collections:
+  projects:
+    output: true
+
+# Every page is English unless its front matter says `lang: tr`.
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
 
 plugins:
   - jekyll-feed

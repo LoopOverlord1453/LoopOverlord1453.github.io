@@ -1,12 +1,16 @@
-# Everything on the About page comes from this file.
-# Empty fields and empty lists are simply not shown.
+# Everything in the profile card, Experience, Education, and Technical skills comes from this file.
+# Empty fields and empty lists are simply not shown. Text fields have an English and a Turkish version.
 
 name: Kubilay
-role: Embedded Software Engineer
 company: Profen
-location: İstanbul
+role:
+  en: Embedded Software Engineer
+  tr: Gömülü Yazılım Mühendisi
+location:
+  en: İstanbul, Türkiye
+  tr: İstanbul, Türkiye
 
-# Put a square photo in assets/img/ and write its path here, for example /assets/img/profile.jpg
+# A square photo in assets/img/.
 photo: /assets/img/profile.jpg
 
 links:
@@ -15,34 +19,51 @@ links:
   - label: LinkedIn
     url: https://www.linkedin.com/in/kubilay-k%C3%B6zleme-533872206/
 
-# Newest first. `period` is free text, for example "2025 – present · 1 yr".
+# Newest first. `period` is free text, for example "2025 – present".
 experience:
-  - title: Embedded Software Engineer
-    org: Profen
+  - org: Profen
     place: İstanbul
     period: ""
-    summary: ""
+    en:
+      title: Embedded Software Engineer
+      summary: ""
+    tr:
+      title: Gömülü Yazılım Mühendisi
+      summary: ""
 
 # Newest first, for example:
-#   - degree: BSc, Electrical and Electronics Engineering
-#     school: Example University
+#   - school: Example University
 #     period: 2020 – 2024
-#     note: ""
+#     en:
+#       degree: BSc, Electrical and Electronics Engineering
+#       note: ""
+#     tr:
+#       degree: Lisans, Elektrik-Elektronik Mühendisliği
+#       note: ""
 education: []
 
-# Shown as tag groups under "Technical skills".
 skills:
-  - group: Languages
+  - en: Languages
+    tr: Diller
     list: [C, Python, "C#"]
-  - group: Microcontrollers
-    list: [STM32F4, STM32N6, TI TM4C123, Zynq-7020]
-  - group: Firmware
-    list: [Bare-metal drivers, RTOS-based architecture, Interrupt-driven design, Flash storage]
-  - group: Interfaces
-    list: [UART, RS-485, I2C, SPI, UDP]
-  - group: Sensors
+  - en: Microcontrollers
+    tr: Mikrodenetleyiciler
+    list: [STM32F4, STM32F0, STM32N6, TI TM4C123, Zynq-7020]
+  - en: Firmware
+    tr: Gömülü yazılım
+    list: [FreeRTOS, Bare-metal drivers, Interrupt-driven design, State machines, Flash storage]
+  - en: Interfaces
+    tr: Arayüzler
+    list: [UART, RS-485, I2C, SPI, USB CDC, UDP]
+  - en: Sensors
+    tr: Sensörler
     list: [BMP388, BMI160, BNO055, HMC5883L, BMP180, INA219]
-  - group: Estimation and control
-    list: [Kalman filter, Complementary filter, Sensor fusion, PID, MPC]
-  - group: Desktop tools
-    list: [PyQt6, NumPy, SciPy, Code generation]
+  - en: Estimation and control
+    tr: Kestirim ve kontrol
+    list: [Kalman filter, Madgwick, Mahony, Complementary filter, PID, LQR, MPC]
+  - en: Desktop tools
+    tr: Masaüstü araçları
+    list: [PyQt6, NumPy, SciPy, WinForms, Code generation]
+  - en: Workflow
+    tr: Çalışma biçimi
+    list: [Git, pytest, STM32CubeIDE, MISRA C]

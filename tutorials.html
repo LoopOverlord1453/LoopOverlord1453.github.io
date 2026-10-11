@@ -2,29 +2,8 @@
 layout: page
 title: Tutorials
 permalink: /tutorials/
+lang: en
 lead: Step-by-step series, grouped by topic. Each post covers the goal, the commands, what went wrong, and the fix.
 wide: true
 ---
-{% for track in site.data.tracks %}
-<section class="track-section" id="{{ track.slug }}">
-  <div class="track-section-head">
-    <span class="track-code">{{ track.code }}</span>
-    <div>
-      <h2>{{ track.title }}</h2>
-      <p>{{ track.description }}</p>
-    </div>
-  </div>
-  {% assign count = 0 %}
-  <div class="post-list">
-    {% for post in site.posts reversed %}{% if post.categories contains track.slug %}
-    {% assign count = count | plus: 1 %}
-    <a class="post-row" href="{{ post.url | relative_url }}">
-      <time datetime="{{ post.date | date_to_xmlschema }}">Part {{ count }}</time>
-      <span class="post-row-title">{{ post.title }}</span>
-      <span class="post-row-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</span>
-    </a>
-    {% endif %}{% endfor %}
-  </div>
-  {% if count == 0 %}<p class="empty-note">Nothing here yet. The first post in this track is on the way.</p>{% endif %}
-</section>
-{% endfor %}
+{% include pages/tutorials.html %}

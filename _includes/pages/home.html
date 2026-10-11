@@ -1,0 +1,91 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign me = site.data.profile %}
+{% assign base = '' %}{% if lang == 'tr' %}{% assign base = '/tr' %}{% endif %}
+<section class="hero">
+  <div class="wrap hero-row">
+    <div class="hero-text">
+      <p class="eyebrow">{{ t.hero_eyebrow }}</p>
+      <h1>{{ t.hero_title }}</h1>
+      <p class="hero-lead">{{ t.hero_lead }}</p>
+      <p class="hero-actions">
+        <a class="button button-primary" href="{{ base | append: '/projects/' | relative_url }}">{{ t.hero_cta_projects }}</a>
+        <a class="button button-ghost" href="{{ base | append: '/about/' | relative_url }}">{{ t.hero_cta_about }}</a>
+      </p>
+    </div>
+    <div class="hero-terminal" aria-hidden="true">
+      <div class="terminal-bar"><i></i><i></i><i></i></div>
+      <pre><span class="prompt">$</span> ls ~/tracks
+{% for track in site.data.tracks %}{{ track.slug }}/
+{% endfor %}
+<span class="prompt">$</span> cat ~/now
+{{ t.hero_now_1 }}
+{{ t.hero_now_2 }}<span class="cursor"></span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{ t.projects_title }}</h2>
+      <p><a href="{{ base | append: '/projects/' | relative_url }}">{{ t.all_projects }} &rarr;</a></p>
+    </div>
+    {% assign only_featured = true %}
+    {% include project-cards.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap about-teaser">
+    {% if me.photo and me.photo != "" %}
+    <img class="profile-photo" src="{{ me.photo | relative_url }}" alt="{{ me.name }}" width="148" height="148">
+    {% endif %}
+    <div>
+      <h2>{{ t.teaser_title }}</h2>
+      <p>{{ t.teaser_text }}</p>
+      <a class="card-link" href="{{ base | append: '/about/' | relative_url }}">{{ t.teaser_link }} &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{ t.tracks_title }}</h2>
+      <p>{{ t.tracks_sub }}</p>
+    </div>
+    <div class="track-grid">
+      {% for track in site.data.tracks %}
+      {% assign count = 0 %}
+      {% for post in site.posts %}{% if post.lang == lang and post.categories contains track.slug %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+      <a class="track-card" href="{{ base | append: '/tutorials/' | relative_url }}#{{ track.slug }}">
+        <span class="track-code">{{ track.code }}</span>
+        <h3>{{ track[lang].title }}</h3>
+        <p>{{ track[lang].description }}</p>
+        <span class="track-count">{% if count == 0 %}{{ t.coming_soon }}{% elsif count == 1 %}{{ t.post_one }}{% else %}{{ count }} {{ t.post_many }}{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{{ t.latest_posts }}</h2>
+      <p><a href="{{ base | append: '/tutorials/' | relative_url }}">{{ t.all_tutorials }} &rarr;</a></p>
+    </div>
+    <div class="post-list">
+      {% assign shown = 0 %}
+      {% for post in site.posts %}{% if post.lang == lang and shown < 6 %}
+      {% assign shown = shown | plus: 1 %}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+        <span class="post-row-title">{{ post.title }}</span>
+        <span class="post-row-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</span>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>

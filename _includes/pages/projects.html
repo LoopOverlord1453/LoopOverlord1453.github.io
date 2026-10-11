@@ -1,0 +1,16 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign only_featured = false %}
+{% include project-cards.html %}
+
+<h2 class="list-title">{{ t.small_title }}</h2>
+<div class="repo-list">
+  {% for repo in site.data.repos %}
+  <a class="repo-row" href="https://github.com/{{ site.github_username }}/{{ repo.name }}">
+    <span class="repo-title">{{ repo[lang].title }}</span>
+    <span class="repo-summary">{{ repo[lang].summary }}</span>
+    <span class="repo-lang">{{ repo.language }}</span>
+  </a>
+  {% endfor %}
+</div>
+<p class="list-foot">{{ t.small_foot }} <a href="https://github.com/{{ site.github_username }}?tab=repositories">{{ t.small_foot_link }}</a>.</p>

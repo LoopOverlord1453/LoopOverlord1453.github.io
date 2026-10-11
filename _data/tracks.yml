@@ -1,25 +1,45 @@
 # Tutorial tracks. A post joins a track by listing the track's slug under `categories`.
 - slug: embedded-linux
   code: LNX
-  title: Embedded Linux
-  description: Bootloaders, kernel builds, device trees, drivers, and build systems on a BeagleBone Green.
+  en:
+    title: Embedded Linux
+    description: Bootloaders, kernel builds, device trees, drivers, and build systems on a BeagleBone Green.
+  tr:
+    title: Gömülü Linux
+    description: BeagleBone Green üzerinde önyükleyici, çekirdek derleme, aygıt ağacı, sürücüler ve derleme sistemleri.
 
 - slug: signal-processing
   code: DSP
-  title: Signal Processing
-  description: Filter design, spectral analysis, and sensor fusion, from the math to fixed-point C.
+  en:
+    title: Signal Processing
+    description: Filter design, spectral analysis, and sensor fusion, from the math to fixed-point C.
+  tr:
+    title: Sinyal İşleme
+    description: Filtre tasarımı, spektral analiz ve sensör füzyonu; matematikten sabit noktalı C koduna.
 
 - slug: control-systems
   code: CTL
-  title: Control Systems
-  description: Modeling, system identification, PID, state feedback, and model predictive control.
+  en:
+    title: Control Systems
+    description: Modeling, system identification, PID, state feedback, and model predictive control.
+  tr:
+    title: Kontrol Sistemleri
+    description: Modelleme, sistem tanımlama, PID, durum geri beslemesi ve model öngörülü kontrol.
 
 - slug: edge-ai
   code: AI
-  title: Edge AI
-  description: Quantizing neural networks and running them on microcontroller accelerators.
+  en:
+    title: Edge AI
+    description: Quantizing neural networks and running them on microcontroller accelerators.
+  tr:
+    title: Uç Yapay Zekâ
+    description: Sinir ağlarını nicemleme ve mikrodenetleyici hızlandırıcılarında çalıştırma.
 
 - slug: fpga
   code: FPGA
-  title: FPGA and SoC Design
-  description: Hardware-software co-design on Zynq, from HLS blocks to a booting system.
+  en:
+    title: FPGA and SoC Design
+    description: Hardware-software co-design on Zynq, from HLS blocks to a booting system.
+  tr:
+    title: FPGA ve SoC Tasarımı
+    description: Zynq üzerinde donanım-yazılım ortak tasarımı; HLS bloklarından açılan sisteme.
