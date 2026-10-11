@@ -30,11 +30,7 @@ body {
   font-size: 17px;
   line-height: 1.65;
   color: var(--text);
-  background:
-    radial-gradient(1100px 600px at 80% -10%, rgba(34, 211, 238, .10), transparent 60%),
-    radial-gradient(900px 600px at 0% 30%, rgba(52, 245, 164, .06), transparent 60%),
-    var(--bg);
-  background-attachment: fixed;
+  background: var(--bg);
   overflow-x: hidden;
 }
 
@@ -46,11 +42,13 @@ body::before {
   z-index: -2;
   background:
     linear-gradient(rgba(34, 211, 238, .035) 1px, transparent 1px) 0 0 / 100% 26px,
-    linear-gradient(90deg, rgba(34, 211, 238, .035) 1px, transparent 1px) 0 0 / 26px 100%;
+    linear-gradient(90deg, rgba(34, 211, 238, .035) 1px, transparent 1px) 0 0 / 26px 100%,
+    radial-gradient(1100px 600px at 80% -10%, rgba(34, 211, 238, .10), transparent 60%),
+    radial-gradient(900px 600px at 0% 30%, rgba(52, 245, 164, .06), transparent 60%);
   pointer-events: none;
 }
 
-#pcb { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+#pcb, #pcb-fx { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
 
 img { max-width: 100%; height: auto; }
 a { color: var(--cyan); text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -355,10 +353,8 @@ main { counter-reset: sec; }
 /* ---------- cards: shared frame ---------- */
 
 .track-card, .project-card, .post-row, .repo-row, .profile, .empty-note {
-  background: var(--surface);
+  background: rgba(10, 21, 36, .92);
   border: 1px solid var(--border);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .track-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
@@ -397,7 +393,6 @@ main { counter-reset: sec; }
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform .18s ease, border-color .2s ease, box-shadow .25s ease;
-  will-change: transform;
 }
 .project-card::before { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(34, 211, 238, .16), transparent 45%); opacity: 0; transition: opacity .25s ease; }
 .project-card::after { content: ""; position: absolute; left: 0; right: 0; top: 0; z-index: 3; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), var(--green), transparent); transform: scaleX(0); transition: transform .35s ease; }
@@ -478,9 +473,7 @@ main { counter-reset: sec; }
   object-fit: cover;
   border: 3px solid var(--cyan);
   box-shadow: 0 0 0 6px rgba(34, 211, 238, .12), 0 0 40px rgba(34, 211, 238, .4);
-  animation: halo 4s ease-in-out infinite;
 }
-@keyframes halo { 50% { box-shadow: 0 0 0 10px rgba(52, 245, 164, .10), 0 0 54px rgba(52, 245, 164, .4); border-color: var(--green); } }
 .profile-initial { display: grid; place-items: center; background: var(--bg-2); color: var(--cyan); font-family: var(--display); font-size: 3.6rem; font-weight: 700; }
 .profile-info { flex: 1 1 280px; }
 .profile-info h2 { font-size: 1.9rem; margin: 0 0 4px; }
@@ -580,6 +573,9 @@ main { counter-reset: sec; }
 .footer-row p { margin: 0; }
 .footer-row a { color: var(--cyan); margin-left: 16px; text-decoration: none; }
 .footer-row a:first-child { margin-left: 0; }
+
+/* animations that are off screen do not run */
+.paused, .paused * { animation-play-state: paused !important; }
 
 /* ---------- reduced motion ---------- */
 
